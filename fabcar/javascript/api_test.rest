@@ -1,0 +1,150 @@
+GET http://localhost:3000/ HTTP/1.1
+
+###
+
+POST http://localhost:5000/register
+content-type: application/json
+
+{
+    "email": "a0123@gmail.com",
+    "password": "a0123",
+    "name": "A0123",
+    "role": "producer",
+    "org": "A0123 Company"
+}
+
+###
+POST http://localhost:5000/register
+content-type: application/json
+
+{
+    "email": "a01234@gmail.com",
+    "password": "a01234",
+    "name": "A01234",
+    "role": "retailer",
+    "org": "A01234 company"
+}
+
+###
+
+POST http://localhost:5000/register
+content-type: application/json
+
+{
+    "email": "a012345@gmail.com",
+    "password": "a012345",
+    "name": "A012345",
+    "role": "consumer",
+    "org": "consumer"
+}
+
+###
+
+POST http://localhost:5000/login
+content-type: application/json
+
+{
+    "email": "a0123@gmail.com",
+    "password": "a0123"
+}
+
+###
+POST http://localhost:5000/login
+content-type: application/json
+
+{
+    "email": "a01234@gmail.com",
+    "password": "a01234"
+}
+
+###
+
+POST http://localhost:5000/login
+content-type: application/json
+
+{
+    "email": "a012345@gmail.com",
+    "password": "a012345"
+}
+
+###
+
+GET  http://localhost:5000/logout
+content-type: application/json
+
+###
+POST http://localhost:5000/products
+content-type: application/json
+
+{
+    "productname": "RICE",
+    "quantity": "100",
+    "unit": "KG"
+}
+
+###
+
+POST http://localhost:5000/products
+content-type: application/json
+
+{
+    "productname": "PULSE",
+    "quantity": "100",
+    "unit": "KG"
+}
+
+###
+2021427150350
+###
+PUT http://localhost:5000/products/request/2021428186334
+content-type: application/json
+
+{
+    "quantity" : "100"
+}
+
+###
+GET http://localhost:5000/products/producer/requests
+
+###
+PUT http://localhost:5000/products/change_owner/2021428186334
+content-type: application/json
+
+###
+
+DELETE http://localhost:3000/products/:productID
+content-type: application/json
+
+
+###
+
+GET http://localhost:3000/products/:productID
+content-type: application/json
+
+###
+
+GET http://localhost:5000/products/retailer
+content-type: application/json
+
+###
+
+GET http://localhost:5000/products/producer
+###
+
+GET http://localhost:5000/products
+content-type: application/json
+
+
+###
+
+GET http://localhost:5000/products/producers_products
+content-type: application/json
+
+###
+
+GET http://localhost:5000/products/retailers_products
+
+
+
+
+

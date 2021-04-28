@@ -1,0 +1,128 @@
+Model Organization {
+    id: string
+    name: string
+    type: string
+    role: 'Producer' | 'Distributor'
+}
+
+Model User {
+    id: string
+    name: string
+    email: string
+    password: string
+    organization: Organization
+    role: 'Consumer' | 'Producer' | 'Distributor'
+}
+
+Model Product {
+    id: string
+    name: string
+    type: string
+    issueDate: date
+    expiryDate: date
+    issuer: User
+    issuingOrg: Organization
+    amount: number // 2, 5, 7
+    unit: string // bottles, packets
+    owner: User
+    ownerOrg: Organization
+}
+
+(POST)
+/api/register
+    - email: string
+    - password: string
+    - Name: string
+    - orgId?: string
+
+    Response:
+        {
+            status: 'successful' | 'failure'
+            description: string
+        }
+
+
+(POST)
+/api/login
+    - email: string
+    - password: string
+    - orgId?: string
+
+    Cookies:
+        - token: string
+        - expireDate: date
+
+    Response:
+        {
+            status: 'successful' | 'failure'
+            description: string
+        }
+
+
+(GET)
+/api/logout
+    Cookies:
+        - token: string
+        - expireDate: date
+
+    Response:
+        {
+            status: 'successful' | 'failure'
+            description: string
+        }
+
+(POST)
+/api/product
+    - product: Product
+
+    Response:
+        {
+            status: 'successful' | 'failure'
+            description: string
+            id: string
+        }
+
+(POST)
+/api/product/changeOwner
+    - productId: string
+    - userId: string
+    - amount: number
+
+    Response:
+        {
+            status: 'successful' | 'failure'
+            description: string
+            id: string
+        }
+
+
+(UPDATE)
+/api/product/{id}
+    - product: Product
+
+    Response:
+        {
+            status: 'successful' | 'failure'
+            description: string
+            id: string
+        }
+
+(DELETE)
+/api/product/{id}
+    - product: Product
+
+    Response:
+        {
+            status: 'successful' | 'failure'
+            description: string
+            id: string
+        }
+
+(GET)
+/api/product
+    Response:
+        {
+            status: 'successful' | 'failure'
+            description: string
+            data: Product[]
+        }

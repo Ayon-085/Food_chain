@@ -1,0 +1,11 @@
+0. Design Architecture
+1. Design API
+
+2. Write Chaincode
+3. Test Chaincode 
+
+4. Write API
+5. Test API
+
+6. Make UI
+7. Unit Testing + Integration Testing + Acceptance Testing
